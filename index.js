@@ -15,7 +15,7 @@ app.use(express.json());
 // app.use(express.static('uploads'));
 // app.use(express.static(path.resolve(__dirname, 'static')));
 app.use(express.static('static'));
-app.use(fileUpload({}));
+app.use(fileUpload());
 app.use(cors({origin: true}));
 
 
@@ -85,23 +85,23 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".jpg";
 
-            //const pathFile = path.resolve(__dirname, 'static', fileName);
-            // image.mv(pathFile);
+            const pathFile = path.resolve(__dirname, 'static', fileName);
+            image.mv(pathFile);
 
-            if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
-            fs.chmodSync(uploadDir, 0o777)
+          //   if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
+          //   fs.chmodSync(uploadDir, 0o777)
 
-            const tempFilePath = path.join(uploadDir, fileName + '.temp');
-            fs.writeFile(tempFilePath, image.data, (err) => {
-              if(err) {
-                console.log(err)
-                return res.status(500).send(err)
-              } 
-            })
-          const pathFile = path.join(uploadDir, fileName);
-          fs.rename(tempFilePath, pathFile, (err) => {if(err) {
-            console.log(err)
-            return res.status(500).send(err)} })
+          //   const tempFilePath = path.join(uploadDir, fileName + '.temp');
+          //   fs.writeFile(tempFilePath, image.data, (err) => {
+          //     if(err) {
+          //       console.log(err)
+          //       return res.status(500).send(err)
+          //     } 
+          //   })
+          // const pathFile = path.join(uploadDir, fileName);
+          // fs.rename(tempFilePath, pathFile, (err) => {if(err) {
+          //   console.log(err)
+          //   return res.status(500).send(err)} })
             
            console.log(__dirname)
             console.log(pathFile);
