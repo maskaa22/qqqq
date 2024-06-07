@@ -105,8 +105,7 @@ app.post("/upload-image", async (req, res) => {
             
            console.log(__dirname)
             console.log(pathFile);
-            const imaLink = `<a href="/static/${fileName}" target="_blank"Open</a>`
-            console.log(imaLink)
+            
       return res.send('GOOOOOOd') 
 
 
