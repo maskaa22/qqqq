@@ -166,5 +166,10 @@ app.post("/upload-image", async (req, res) => {
    const imageName = req.params.imageName;
    console.log(imageName)
  })
+ app.get('/', (req, res) => {
+  res.json({
+    'name': 'Maria'
+  })
+})
 
 app.listen(port, () => console.log('server started on Port ' + port));
