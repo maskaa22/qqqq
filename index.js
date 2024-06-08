@@ -166,7 +166,7 @@ app.post("/upload-image", async (req, res) => {
    const imageName = req.params.imageName;
    console.log(imageName)
  })
- app.get('/', (req, res) => {
+ app.get('/api/name', (req, res) => {
   res.json({
     'name': 'Maria'
   })
