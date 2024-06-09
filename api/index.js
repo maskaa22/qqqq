@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 // app.use(express.static('uploads'));
 // app.use(express.static(path.resolve(__dirname, 'static')));
-app.use(express.static('public'));
+app.use(express.static('static'));
 app.use(fileUpload());
 app.use(cors({origin: true}));
 
