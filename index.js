@@ -83,7 +83,7 @@ app.post("/upload-image", async (req, res) => {
 
     const {image} = req.files;
     console.log(image)
-            let fileName = uuid.v4() + ".jpg";
+            let fileName = uuid.v4() + ".png";
 
     const result = await image.mv(`${__dirname}/public/${fileName}`, err => {
 
