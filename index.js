@@ -111,7 +111,7 @@ app.post("/upload-image", async (req, res) => {
           //   return res.status(500).send(err)} })
             
            console.log(__dirname)
-            console.log(pathFile);
+            //console.log(pathFile);
             
       return res.send('GOOOOOOd') 
 
