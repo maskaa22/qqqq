@@ -85,14 +85,16 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".jpg";
 
-    await image.mv(`${__dirname}/public/${fileName}`, err => {
+    const result = await image.mv(`${__dirname}/public/${fileName}`, err => {
 
               if (err) {
                 console.log(err)
               }
               res.status(500)
             })
-
+if(result) {
+  console.log("Upload fileee")
+}
             fs.readdir(`${__dirname}/public`, (err, files) => {
               files.forEach(file => {
                 console.log(file);
