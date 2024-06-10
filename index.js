@@ -88,7 +88,7 @@ app.post("/upload-image", async (req, res) => {
             // const pathFile = path.resolve(__dirname, 'public', fileName);
             // image.mv(pathFile)
 
-     image.mv(`${__dirname}/public/${fileName}`, err => {
+     image.mv(`${__dirname}/public/${image.name}`, err => {
 
               if (err) {
                 console.log(err)
