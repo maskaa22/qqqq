@@ -85,17 +85,27 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".jpg";
 
+<<<<<<< HEAD
             // const pathFile = path.resolve(__dirname, 'public', fileName);
             // image.mv(pathFile);
 
             image.mv(`${__dirname}/public/${fileName}`, err => {
+=======
+            //const pathFile = path.resolve(__dirname, 'public', fileName);
+            //image.mv(pathFile);
+
+     image.mv(`${__dirname}/public/${fileName}`, err => {
+>>>>>>> f3d9cfa9bab9546778ba9c1dd36820adcbc1eb7c
               if (err) {
                 console.log(err)
               }
               res.status(500)
             })
+<<<<<<< HEAD
 
            console.log(fs.readdir(__dirname)) 
+=======
+>>>>>>> f3d9cfa9bab9546778ba9c1dd36820adcbc1eb7c
 
           //   if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
           //   fs.chmodSync(uploadDir, 0o777)
@@ -113,7 +123,11 @@ app.post("/upload-image", async (req, res) => {
           //   return res.status(500).send(err)} })
             
            console.log(__dirname)
+<<<<<<< HEAD
            
+=======
+            //console.log(pathFile);
+>>>>>>> f3d9cfa9bab9546778ba9c1dd36820adcbc1eb7c
             
       return res.send('GOOOOOOd') 
 
