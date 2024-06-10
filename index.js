@@ -85,8 +85,15 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".jpg";
 
-            const pathFile = path.resolve(__dirname, 'public', fileName);
-            image.mv(pathFile);
+            //const pathFile = path.resolve(__dirname, 'public', fileName);
+            //image.mv(pathFile);
+
+     image.mv(`${__dirname}/public/${fileName}`, err => {
+              if (err) {
+                console.log(err)
+              }
+              res.status(500)
+            })
 
           //   if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
           //   fs.chmodSync(uploadDir, 0o777)
