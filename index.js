@@ -85,17 +85,17 @@ app.post("/upload-image", async (req, res) => {
     console.log('Great', tempFilePath)
 
 
-    const {image} = req.files;
-    console.log(image)
-            let fileName = uuid.v4() + ".png";
+    // const {image} = req.files;
+    // console.log(image)
+    //         let fileName = uuid.v4() + ".png";
 
-    image.mv(`${__dirname}/public/${image.name}`, err => {
+    // image.mv(`${__dirname}/public/${image.name}`, err => {
 
-              if (err) {
-                console.log(err)
-              }
-              res.status(500)
-            })
+    //           if (err) {
+    //             console.log(err)
+    //           }
+    //           res.status(500)
+    //         })
 
             fs.readdir(`${__dirname}/public`, (err, files) => {
               files.forEach(file => {
