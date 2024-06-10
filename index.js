@@ -85,10 +85,7 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".jpg";
 
-            // const pathFile = path.resolve(__dirname, 'public', fileName);
-            // image.mv(pathFile)
-
-     image.mv(`${__dirname}/public/${image.name}`, err => {
+    await image.mv(`${__dirname}/public/${fileName}`, err => {
 
               if (err) {
                 console.log(err)
@@ -102,73 +99,10 @@ app.post("/upload-image", async (req, res) => {
               });
             });
 
-          //   if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
-          //   fs.chmodSync(uploadDir, 0o777)
-
-          //   const tempFilePath = path.join(uploadDir, fileName + '.temp');
-          //   fs.writeFile(tempFilePath, image.data, (err) => {
-          //     if(err) {
-          //       console.log(err)
-          //       return res.status(500).send(err)
-          //     } 
-          //   })
-          // const pathFile = path.join(uploadDir, fileName);
-          // fs.rename(tempFilePath, pathFile, (err) => {if(err) {
-          //   console.log(err)
-          //   return res.status(500).send(err)} })
-            
            console.log(__dirname)
 
       return res.send('GOOOOOOd') 
 
-
-      //  const file = req.file;
-       
-      //  console.log(22222);
-      //  if(!file) {
-      //   console.log('NOT IMAGE');
-      //    return res.status(400).send('No file');
-      //  }
-      //  console.log('Image OKKKKK');
-      //  return res.send('GOOOOOOd')
-
-
-
-      //  const oldPath = file.path;
-      //  // const newPath = `uploads/${file.originalname}`;
-      //  const newPath = path.join(__dirname, 'uploads', file.originalname);
-      //  fs.renameSync(oldPath, newPath);
-      //  console.log(newPath);
-
-      //  const imageUrl = `https://telegram-bot-picture-node.onrender.com/${newPath}`;
-      //  console.log(imageUrl)
-
-
-       // const imagePath = path.join(__dirname, 'uploads', file.filename);
-       // console.log(imagePath)
-
-       // async function main() {
-       //   const response = await openai.chat.completions.create({
-       //     model: "gpt-4o",
-       //     messages: [
-       //       {
-       //         role: "user",
-       //         content: [
-       //           { type: "text", text: "What’s in this image?" },
-       //           {
-       //             type: "image_url",
-       //             image_url: {
-       //               url: imageUrl,
-       //             },
-       //           },
-       //         ],
-       //       },
-       //     ],
-       //     max_tokens: 500,
-       //   });
-       //   console.log(response.choices[0]);
-       // }
-       // main();
    } catch(err) {
      console.log(err);
    }
