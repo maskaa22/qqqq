@@ -123,4 +123,4 @@ app.post("/upload-image", async (req, res) => {
   })
 })
 
-app.listen(port, () => console.log('server started on Port ' + port));
+app.listen(5000, () => console.log('server started on Port ' + port));
