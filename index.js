@@ -95,6 +95,8 @@ app.post("/upload-image", async (req, res) => {
               res.status(500)
             })
 
+           console.log(fs.readdir(__dirname)) 
+
           //   if(!fs.existsSync(uploadDir)) {fs.mkdirSync(uploadDir)};
           //   fs.chmodSync(uploadDir, 0o777)
 
@@ -111,7 +113,7 @@ app.post("/upload-image", async (req, res) => {
           //   return res.status(500).send(err)} })
             
            console.log(__dirname)
-            console.log(pathFile);
+           
             
       return res.send('GOOOOOOd') 
 
