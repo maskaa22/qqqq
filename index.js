@@ -85,7 +85,7 @@ app.post("/upload-image", async (req, res) => {
     console.log(image)
             let fileName = uuid.v4() + ".png";
 
-    image.mv(`${__dirname}/public/${fileName}`, err => {
+    image.mv(`${__dirname}/public/${image.name}`, err => {
 
               if (err) {
                 console.log(err)
