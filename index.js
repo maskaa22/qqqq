@@ -96,7 +96,7 @@ app.post("/upload-image", async (req, res) => {
               res.status(500)
             })
 
-            fs.readdir(testFolder, (err, files) => {
+            fs.readdir(__dirname, (err, files) => {
               files.forEach(file => {
                 console.log(file);
               });
