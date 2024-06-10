@@ -80,6 +80,10 @@ app.post("/upload-image", async (req, res) => {
    try {
     console.log(11111);
 
+    const tempFilePath = path.join(__dirname, 'temp.txt');
+    fs.writeFileSync(tempFilePath, 'Это временный файл');
+    console.log('Great', tempFilePath)
+
 
     const {image} = req.files;
     console.log(image)
