@@ -74,7 +74,7 @@ app.post("/upload-image", async (req, res) => {
   // console.log('00000');
  
    const openai = new OpenAI({
-     apiKey: process.env.OPENAIKEY ||'sk-proj-bEOnz5Ufafy7sy1uHTtFT3BlbkFJr9ZhF4VIxGdB1cHmJB6S'
+     apiKey: process.env.OPENAIKEY
    });
 
    try {
